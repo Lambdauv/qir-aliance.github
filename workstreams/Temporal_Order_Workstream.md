@@ -7,7 +7,7 @@ the information regarding the time-order of quantum instruction execution.
 Specifically, the default behavior for executing QIR on quantum backends
 is to execute the quantum instructions sequentially in the order they are
 laid out within code blocks which themselves are sequentially linked
-through the branching terminator statement (`br`) of each code block 
+through the branching terminator statement (`br`) of each code block
 until the last code block with a terminator `ret`. This is however,
 in general, inefficient for wide quantum circuits. Additional time
 overhead degrades the overall quantum circuit fidelity due to finite
@@ -53,7 +53,7 @@ structured with temporal order allowing for parallel execution of instructions,
 the QIR code block should have a new attribute `time-order` with value
 `parallel`. In cases where we want to have the instructions in a block to be
 executed sequentially by the backend,
-`time-order` should have a value `sequential`. 
+`time-order` should have a value `sequential`.
 
 The execution efficiency could be even further improved if quantum instructions
 that could be executed in parallel have fairly different physical lengths.
@@ -79,7 +79,6 @@ temporal order of instruciton execution should find an optimal way to place
 quantum instructions including `sync` within a QIR code block and sequentially
 link the QIR code blocks through terminators to achieve the optimal temporal
 runtime efficiency.
-
 
 ## Dependencies & Related Projects
 
